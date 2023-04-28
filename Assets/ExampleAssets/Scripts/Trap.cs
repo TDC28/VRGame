@@ -8,7 +8,7 @@ using System.Threading;
 
 public class Trap: MonoBehaviour {
     private System.Random rnd = new System.Random();
-    private int fullAmount = 4;
+    private int fullAmount = 10;
     private bool isActive = false;
     private int lobsters = 0;
     private int interval = 30 * 1000; //This is milliseconds, this is why it is multiplied by 1000

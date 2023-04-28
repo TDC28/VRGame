@@ -6,28 +6,43 @@ using System.Threading;
 
 
 
-public class Trap {
+public class Trap: MonoBehaviour {
     private System.Random rnd = new System.Random();
-    private bool isActive { get; set; }
-    private int lobsters { get; set; }
+    private int fullAmount = 4;
+    private bool isActive = false;
+    private int lobsters = 0;
     private int interval = 30 * 1000; //This is milliseconds, this is why it is multiplied by 1000
-    private double increment { get; set; }
+    
     public bool full = false;
 
-    public Trap (double Increment) { //initialises the Trap at zero lobsters and not active.
-        this.isActive = false;
-        this.lobsters = 0;
+    public void Start()
+    {
         
     }
 
-    public void Start()
+    public void Update()
+    {
+        
+    }
+
+
+    
+
+    
+
+    public void Commence()
     {
         this.isActive = true; //sets is active to true
         while (this.isActive == true) //starts a loop to randomize the amount of lobsters we get over time.
         {
-            Thread.Sleep(this.interval);
+            Thread.Sleep(this.interval); //A problem might occure when trying to add sleeping to the game.
             double rng = rnd.NextDouble();
-            if (rng > 0.5)
+
+            if(lobsters == this.fullAmount)
+            {
+                full = true;
+            }
+            if (rng > 0.5 && full == false)
             {
                 this.Increment();
             }

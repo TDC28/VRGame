@@ -38,7 +38,7 @@ public class Trap: MonoBehaviour {
             Thread.Sleep(this.interval); //A problem might occure when trying to add sleeping to the game
             double rng = rnd.NextDouble();
 
-            if(lobsters == this.fullAmount)
+            if(lobsters >= this.fullAmount)
             {
                 full = true;
             }
